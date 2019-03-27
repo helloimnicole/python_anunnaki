@@ -1,0 +1,65 @@
+<!doctype html>
+  <html>
+    <head>
+      <title>Anunnaki</title>
+      <style type=text/css>{{ get_resource_as_string('static/styles.css') }}</style>
+    </head>
+
+    <body>
+
+      <header>
+        <div class="container">
+          <h1 class="logo">Are we the descendants of Anunnaki?</h1>
+          <strong><nav>
+            <ul class="menu">
+              <li><a href="{{ url_for('home') }}">Home</a></li>
+              <li><a href="{{ url_for('about') }}">About</a></li>
+            </ul>
+          </nav></strong>
+        </div>
+      </header>
+
+      <div class="container">
+        {% block content %}
+        {% endblock %}
+      </div>
+
+          <div class="about">
+            <h1>About Anunnaki</h1>
+            <p>The Anunnaki are a group of supernatural beings
+              that appear in the mythological traditions of the ancient humans, such as the Sumerians.</p>
+          </div>
+
+          <div id="contact-form">
+            <h1>Contact</h1>
+            <p>Sign up with your email address to get weekly updates</p>
+            <form method="post" action="/signup">
+              <input type="email" id="email" name="email" required="required" placeholder="Email">
+              <br / >
+              <br / >
+              <input type="email" placeholder="Confirm email">
+              <br / >
+              <br / >
+              <input type="text" placeholder="What should we call you?">
+              <br / >
+              <br / >
+              <input type="radio" name="gender" value="male"> Men
+              <input type="radio" name="gender" value="male"> Women
+              <input type="radio" name="gender" value="male"> Anunnaki
+              <input type="radio" name="gender" value="male"> Other
+              <input type="radio" name="gender" value="male"> Prefer not to tell
+              <br / >
+              <br / >
+              <textarea id="message" name="message" placeholder="Anything you want to let us know?" style="height:170px"></textarea>
+              <br / >
+              <br / >
+              <input type="checkbox"> Share my registration data with Anunnaki's content providers for marketing purposes.
+              <br / >
+              <br / >
+              <input type="submit" value="Submit" id="submit-button">
+            </form>
+          </div>
+
+    </body>
+
+  </html>
