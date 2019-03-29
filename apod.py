@@ -1,4 +1,6 @@
 from flask import Flask, render_template, request
+import requests
+import json
 
 
 app=Flask("MyApp")
@@ -11,7 +13,9 @@ app.jinja_env.globals['get_resource_as_string'] = get_resource_as_string
 
 @app.route("/")
 def home():
-    return render_template('home.html')
+    r = requests.get('https://api.nasa.gov/planetary/apod?api_key=clABaHP2DhsNUB8mZdjFdEAWT8Bcz1hAGzPMERIl')
+    json_object = r.json()
+    return render_template('home.html', apod=json.loads(r.text)['hdurl'])
 
 @app.route('/about/')
 def about():
@@ -25,3 +29,9 @@ def sign_up():
 
 
 app.run(debug=True)
+
+
+#endpoint = "https://api.nasa.gov/planetary/apod"
+#payload = {"date":"2019-03-28", "hd":"False", "api_key":"clABaHP2DhsNUB8mZdjFdEAWT8Bcz1hAGzPMERIl"}
+#response = requests.get(endpoint, params=payload)
+#data = response.json()
