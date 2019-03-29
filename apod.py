@@ -29,9 +29,3 @@ def sign_up():
 
 
 app.run(debug=True)
-
-
-#endpoint = "https://api.nasa.gov/planetary/apod"
-#payload = {"date":"2019-03-28", "hd":"False", "api_key":"clABaHP2DhsNUB8mZdjFdEAWT8Bcz1hAGzPMERIl"}
-#response = requests.get(endpoint, params=payload)
-#data = response.json()
