@@ -17,7 +17,7 @@ def home():
     json_object = r.json()
     return render_template('home.html', apod=json.loads(r.text)['hdurl'])
 
-@app.route('/about/')
+@app.route('/about')
 def about():
     return render_template('about.html')
 
